@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #344767;
+  --secondary-color: #E91E63;
+  --success-color: #4CAF50;
+  --neutral-color: #607D8B;
+}
+
+body {
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #344767;
+}
+
+/* Channels Chart Styles */
+.channels-chart-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.chart-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.channels-legend {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #212529;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 576px) {
+  .chart-area {
+    height: 160px;
+    margin-bottom: 10px;
+  }
+
+  .channels-legend {
+    gap: 8px;
+  }
+
+  .legend-item {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .channels-legend {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Chart container */
+.chart-container {
+  width: 100%;
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: 250px;
+  }
+}
+
+/* Custom styles for charts */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #f0f0f0;
+}
+
+.recharts-tooltip-wrapper {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Sidebar transition */
+.sidebar-transition {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Chart colors */
+.recharts-pie-sector {
+  transition: opacity 0.3s;
+}
+
+.recharts-pie-sector:hover {
+  opacity: 0.8;
+}
+
+/* Line chart customization */
+.recharts-line {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
